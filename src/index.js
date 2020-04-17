@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import './stylesheets/index.scss';
 import App from './components/App'
 
 // function Image(props) {

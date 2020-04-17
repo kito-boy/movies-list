@@ -1,4 +1,6 @@
 import React from 'react'
+import classNames from "classnames";
+
 
 class MovieItem extends React.Component {
 
@@ -22,41 +24,27 @@ class MovieItem extends React.Component {
           alt=""
         />
         <div className="card-body">
-          <h6 className="card-title">{movie.title}</h6>
+          <h5 className="card-title mb-5 mt-2">{movie.title}</h5>
           <div className="d-flex justify-content-between align-items-center">
             <p className="mb-0">Rating: {movie.vote_average}</p>
-            {this.state.willWatch ? (
-              <button 
-                type="button"   
-                className="btn btn-success"
-                onClick={() => {
-                  this.setState({
-                    willWatch: false
-                  })
-                  removeMovieFromWillWatch(movie)
-                  }
-                }              >
-                Will Watch
-              </button>
-              ) : (
-              <button 
-                type="button"   
-                className="btn btn-secondary"
-                onClick={() => {
-                  this.setState({
-                    willWatch: true
-                  })
-                  addToMovieWillWatch(movie)
-                  }
-                }
-              >
-                Will Watch
-              </button>
-            )}
-            
+            <button 
+              type="button"   
+              className={classNames('btn', 
+                                    {'btn-success': this.state.willWatch}, 
+                                    {'btn-secondary': !this.state.willWatch}
+                                    )}
+              onClick={ () => {
+                this.setState({
+                  willWatch: !this.state.willWatch
+                })
+                this.state.willWatch ? removeMovieFromWillWatch(movie) : addToMovieWillWatch(movie)
+              }}              
+            >
+              Will Watch
+            </button>         
           </div>
         </div>
-        <button onClick={removeMovie.bind(null, movie)}>Delete Movie</button>
+        {/* <button onClick={removeMovie.bind(null, movie)}>Delete Movie</button> */}
       </div>
     )
   }
