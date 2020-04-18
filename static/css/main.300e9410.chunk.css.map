@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.scss"],"names":[],"mappings":"AAAA,KACE,qBAAsB,CACvB,MAGC,cAAe,CAChB,YAGC,cAAe,CACf,KAAM,CACN,OAAQ,CACR,YAAa","file":"main.300e9410.chunk.css","sourcesContent":["body {\n  background-color: #bbb;\n}\n\n.tabs {\n  cursor: pointer;\n}\n\n.will-watch {\n  position: fixed;\n  top: 0;\n  right: 0;\n  z-index: 1030;\n}"]}
